@@ -1,6 +1,42 @@
 @import 'base';
 
+// Button
+@mixin button-style {
+  padding: 21px 25px;
+  background-color: $orange-color;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  font-size: 1.25rem;
+  font-family: $font-work-sans;
+  font-weight: 600;
+  color: $white-color;
+}
+@mixin paragraph-style {
+  color: $dark-3-color;
+  font-family: $font-work-sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+@mixin title-style($font-size) {
+  color: $dark-1-color;
+  font-family: $font-work-sans;
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 // ====== navbar section Style here =====
+header {
+  background-color: $bg-color;
+  padding: 2.8125rem 0;
+}
 .navbar {
   &__main {
     gap: 4rem;
@@ -14,7 +50,27 @@
     color: $dark-2-color;
   }
 }
-// ====== navbar section Style here =====
+// ====== Banner section Style here =====
+.banner {
+  &__content {
+    max-width: 862px;
+    margin: 0 auto;
+  }
+  &__content-title {
+    margin-top: 116px;
+    margin-bottom: 33px;
+    @include title-style(5rem);
+  }
+  &__content-description {
+    @include paragraph-style();
+  }
+  &__content-btn {
+    border: none;
+    margin-top: 3.125rem;
+    margin-bottom: 2rem;
+    @include button-style();
+  }
+}
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====

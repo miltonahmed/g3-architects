@@ -1,76 +1,154 @@
 @import 'base';
 
-// Button
-@mixin button-style {
-  padding: 21px 25px;
-  background-color: $orange-color;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  font-size: 1.25rem;
-  font-family: $font-work-sans;
-  font-weight: 600;
-  color: $white-color;
-}
-@mixin paragraph-style {
-  color: $dark-3-color;
-  font-family: $font-work-sans;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-}
-
-@mixin title-style($font-size) {
-  color: $dark-1-color;
-  font-family: $font-work-sans;
-  font-size: $font-size;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
 // ====== navbar section Style here =====
+// ===== Header =====
 header {
   background-color: $bg-color;
   padding: 2.8125rem 0;
+
+  @include respond(sm) {
+    padding: 2rem 0;
+  }
 }
+
+// ===== Navbar Section =====
 .navbar {
+  &__hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: $dark-1-color;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+
+    i {
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .fa-times {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0; // Hide Icons
+    }
+
+    &.active {
+      .fa-bars {
+        opacity: 0;
+      }
+      .fa-times {
+        opacity: 1;
+      }
+    }
+
+    @include respond(md) {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    // মোবাইলে লোগো নিচে নামবে যখন menu active থাকবে
+    &.active {
+      @include respond(md) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+
   &__main {
     gap: 4rem;
+    @include respond(md) {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: $bg-color;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    &.active {
+      display: flex !important;
+      flex-direction: column;
+    }
   }
   &__item {
     font-family: $font-work-sans;
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   &__link {
     color: $dark-2-color;
   }
 }
-// ====== Banner section Style here =====
+//  ===== Banner (Hero) Section =====
 .banner {
+  &__wrapper {
+    margin-top: 7.2rem;
+    margin-bottom: 2rem;
+
+    @include respond(md) {
+      margin-top: 5rem;
+    }
+
+    @include respond(sm) {
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+
   &__content {
     max-width: 862px;
     margin: 0 auto;
+
+    @include respond(sm) {
+      padding: 0 1rem;
+    }
   }
+
   &__content-title {
-    margin-top: 116px;
-    margin-bottom: 33px;
-    @include title-style(5rem);
+    @include title-style(4rem);
+
+    @include respond(md) {
+      font-size: 3rem;
+    }
+
+    @include respond(sm) {
+      font-size: 2.2rem;
+    }
   }
+
   &__content-description {
-    @include paragraph-style();
+    @include paragraph-style;
+
+    @include respond(sm) {
+      font-size: 0.95rem;
+      line-height: 1.6rem;
+      margin-top: 1rem;
+    }
   }
+
   &__content-btn {
     border: none;
     margin-top: 3.125rem;
     margin-bottom: 2rem;
     @include button-style();
+
+    @include respond(sm) {
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
+
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====

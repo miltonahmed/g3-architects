@@ -1,0 +1,86 @@
+// Google fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+// flexbox
+$flex: flex, inline-flex;
+@each $flex in $flex {
+  .#{$flex} {
+    display: $flex;
+  }
+}
+// flex detraction
+$flex-direction: row, row-reverse, column, column-reverse;
+@each $single in $flex-direction {
+  .#{$single} {
+    flex-direction: $single;
+  }
+}
+// Justify-content
+$justify: flex-start, flex-end, center, space-between, space-around,
+  space-evenly;
+@each $justify in $justify {
+  .#{$justify} {
+    justify-content: $justify;
+  }
+}
+
+// Align
+$aligns: flex-start, flex-end, center, space-between, space-around, space-evenly;
+@each $align in $aligns {
+  .align-#{$align} {
+    align-content: $align;
+  }
+}
+// items
+$items: flex-start, flex-end, center, baseline, stretch;
+@each $item in $items {
+  .align-#{$item} {
+    align-items: $item;
+  }
+}
+$align: left, center, right, justify;
+@each $align in $align {
+  .text-#{$align} {
+    text-align: $align;
+  }
+}
+$case: lowercase, capitalize, uppercase;
+@each $case in $case {
+  .text-#{$case} {
+    text-transform: $case;
+  }
+}
+$list: left, center, right, justify;
+@each $i in $list {
+  .text-#{$i} {
+    text-align: $i;
+  }
+}
+
+// Container
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+// Variable
+$font-work-sans: 'Work Sans', sans-serif;
+$white-color: #ffffff;
+$dark-1-color: #131313;

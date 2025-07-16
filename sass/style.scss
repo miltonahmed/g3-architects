@@ -111,7 +111,7 @@ header {
   }
 
   &__content-title {
-    @include title-style(4rem);
+    @include title-style(4rem, 700);
 
     @include respond(md) {
       font-size: 3rem;
@@ -149,7 +149,67 @@ header {
   }
 }
 
-// ====== navbar section Style here =====
+// ====== teams section Style here =====
+.teams {
+  background-color: $white-color;
+  margin-top: 85px;
+  &__wrapper {
+    gap: 73px;
+    @include respond(md) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include respond(sm) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    display: grid;
+    grid-template-columns: repeat(2, 342px);
+    gap: 24px;
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+      img {
+        width: 100%;
+      }
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__content {
+    max-width: 537px;
+  }
+  &__content-title {
+    @include title-style(4rem, 700);
+    @include respond(md) {
+      font-size: 2rem;
+    }
+
+    @include respond(sm) {
+      font-size: 1.5rem;
+    }
+    span:nth-child(1) {
+      color: $dark-3-color;
+    }
+    span:nth-child(2) {
+      color: $dark-1-color;
+    }
+    span:nth-child(3) {
+      color: $orange-color;
+    }
+  }
+  &__content-description {
+    @include paragraph-style;
+  }
+}
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====
 // ====== navbar section Style here =====

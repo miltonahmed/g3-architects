@@ -11,6 +11,7 @@
 img {
   max-width: 100%;
   vertical-align: middle;
+  object-fit: cover;
 }
 a {
   text-decoration: none;
@@ -112,12 +113,12 @@ $bg-color: rgba(255, 144, 14, 0.1);
   line-height: 26px; /* 162.5% */
 }
 
-@mixin title-style($font-size) {
+@mixin title-style($font-size, $font-weight) {
   color: $dark-1-color;
   font-family: $font-work-sans;
   font-size: $font-size;
   font-style: normal;
-  font-weight: 700;
+  font-weight: $font-weight;
   line-height: normal;
 }
 

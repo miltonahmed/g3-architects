@@ -64,7 +64,7 @@ $align: left, center, right, justify;
 }
 $case: lowercase, capitalize, uppercase;
 @each $case in $case {
-  .text-#{$case} {
+  .#{$case} {
     text-transform: $case;
   }
 }
@@ -84,3 +84,4 @@ $list: left, center, right, justify;
 $font-work-sans: 'Work Sans', sans-serif;
 $white-color: #ffffff;
 $dark-1-color: #131313;
+$dark-2-color: #424242;

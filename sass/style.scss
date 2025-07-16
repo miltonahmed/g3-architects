@@ -2,12 +2,16 @@
 
 // ====== navbar section Style here =====
 .navbar {
-  &__logo {
+  &__main {
+    gap: 4rem;
+  }
+  &__item {
     font-family: $font-work-sans;
-    font-size: 4rem;
-    color: $dark-1-color;
-    width: 302px;
-    height: 53px;
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+  &__link {
+    color: $dark-2-color;
   }
 }
 // ====== navbar section Style here =====
